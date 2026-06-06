@@ -1,0 +1,22 @@
+name: Deploy to FastAPI Cloud
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to FastAPI Cloud
+        uses: fastapi/fastapi-cloud-cli-action@main
+        with:
+          token: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
+          app-id: ${{ secrets.FASTAPI_CLOUD_APP_ID }}
+          path: backend
