@@ -1,0 +1,1040 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap');
+
+/* --- DESIGN SYSTEM TOKENS --- */
+:root {
+  --color-theater-red-dark: #1f0204;
+  --color-theater-red-mid: #3d0408;
+  --color-theater-red-bright: #690c13;
+  --color-velvet-overlay: rgba(18, 18, 20, 0.85);
+  --color-gold-bright: #f3e5ab;
+  --color-gold-mid: #d4af37;
+  --color-gold-dark: #aa8210;
+  --color-gold-light: #fbf6ef;
+  --color-text-cream: #ebdcc9;
+  --color-text-muted: #bfa88f;
+  --color-card-bg: rgba(22, 19, 19, 0.85);
+  
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-accent: 'Playfair Display', serif;
+  
+  --border-radius-ticket: 8px;
+  --shadow-gold: 0 0 15px rgba(212, 175, 55, 0.35);
+  --shadow-red: 0 0 20px rgba(61, 4, 8, 0.6);
+  --shadow-velvet: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* --- BASE STYLES & RESET --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-theater-red-dark);
+  background-image: 
+    radial-gradient(circle at 50% 15%, var(--color-theater-red-mid) 0%, var(--color-theater-red-dark) 85%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M10 10h80v80H10z' fill='%23000' fill-opacity='.02'/%3E%3C/svg%3E");
+  color: var(--color-text-cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* --- MAIN CONTAINER & HEADERS --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.theater-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px double var(--color-gold-mid);
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.theater-header::before, .theater-header::after {
+  content: "★";
+  color: var(--color-gold-mid);
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: -0.7rem;
+}
+.theater-header::before { left: 35%; }
+.theater-header::after { right: 35%; }
+
+.app-title-container {
+  display: inline-block;
+  position: relative;
+}
+
+.app-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--color-gold-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.4);
+  margin-bottom: 0.2rem;
+}
+
+.app-subtitle {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-gold-mid);
+  letter-spacing: 1px;
+}
+
+/* --- THEATRICAL GRID LAYOUT --- */
+.theater-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .theater-grid {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+.sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- THE STORY CARD --- */
+.story-scene-card {
+  background: var(--color-card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  box-shadow: var(--shadow-velvet), var(--shadow-red);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.story-scene-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-mid), transparent);
+}
+
+/* --- NOTIFICATION BANNER --- */
+.item-notification-banner {
+  background: linear-gradient(90deg, var(--color-theater-red-bright), #8b141d, var(--color-theater-red-bright));
+  border: 1px solid var(--color-gold-mid);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), var(--shadow-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--color-gold-light);
+}
+
+.banner-sparkle {
+  color: var(--color-gold-mid);
+  font-size: 1.2rem;
+}
+
+/* --- SCENE IMAGE & PLACEHOLDER --- */
+.scene-image-container {
+  width: 100%;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9);
+}
+
+@media (min-width: 600px) {
+  .scene-image-container {
+    height: 380px;
+  }
+}
+
+.scene-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scene-spotlight-glow {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 20%, transparent 35%, rgba(0,0,0,0.6) 80%);
+  pointer-events: none;
+}
+
+/* Theatrical Placeholder design */
+.theatrical-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #180103 0%, #300306 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.placeholder-curtains {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  background: linear-gradient(90deg, #1f0103, #5a060d);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.placeholder-curtains::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: repeating-linear-gradient(90deg, transparent, rgba(0,0,0,0.2) 10px, transparent 20px);
+}
+.placeholder-curtains:first-of-type { left: 0; border-right: 1px solid rgba(212,175,55,0.2); }
+.placeholder-curtains:last-of-type { right: 0; border-left: 1px solid rgba(212,175,55,0.2); }
+
+.placeholder-spotlight {
+  position: absolute;
+  top: -20%;
+  left: 30%;
+  width: 40%;
+  height: 140%;
+  background: radial-gradient(ellipse at top, rgba(243, 229, 171, 0.12) 0%, transparent 60%);
+  transform: rotate(-10deg);
+  transform-origin: top center;
+  animation: rotate-spotlight 6s ease-in-out infinite alternate;
+}
+
+.placeholder-content {
+  text-align: center;
+  z-index: 2;
+  padding: 0 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+}
+
+.placeholder-scene-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-gold-light);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.placeholder-note {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* --- SCENE TEXT STYLING --- */
+.scene-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.scene-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-gold-mid);
+  border-left: 3px solid var(--color-gold-mid);
+  padding-left: 0.8rem;
+  line-height: 1.2;
+}
+
+.scene-text {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-text-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.story-paragraph {
+  text-align: justify;
+}
+
+/* --- CHOICES SECTION & TICKET BUTTONS --- */
+.choices-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.choices-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-gold-dark);
+}
+
+.choices-divider::before, .choices-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--color-gold-dark), transparent);
+}
+
+.divider-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.choices-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* --- VINTAGE THEATRE TICKET BUTTON --- */
+.choice-button {
+  display: flex;
+  align-items: stretch;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.choice-button:focus {
+  outline: none;
+}
+
+.choice-button:active {
+  transform: scale(0.98);
+}
+
+.ticket-edge-left, .ticket-edge-right {
+  width: 12px;
+  background: var(--color-gold-mid);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-edge-left {
+  border-top-left-radius: var(--border-radius-ticket);
+  border-bottom-left-radius: var(--border-radius-ticket);
+}
+
+.ticket-edge-right {
+  border-top-right-radius: var(--border-radius-ticket);
+  border-bottom-right-radius: var(--border-radius-ticket);
+}
+
+/* Notch circular cuts using absolute negative margins */
+.ticket-edge-left::before, .ticket-edge-right::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-theater-red-dark);
+  border-radius: 50%;
+  top: calc(50% - 5px);
+  z-index: 1;
+}
+
+.ticket-edge-left::before { right: -5px; }
+.ticket-edge-right::before { left: -5px; }
+
+.ticket-body {
+  flex: 1;
+  background: linear-gradient(135deg, #1d1b1a 0%, #11100f 100%);
+  border-top: 1px solid var(--color-gold-mid);
+  border-bottom: 1px solid var(--color-gold-mid);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.choice-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.requirement-tag {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.item-highlight {
+  color: var(--color-gold-mid);
+}
+
+/* Hover and Lock States */
+.choice-button.active:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+.choice-button.active:hover .ticket-edge-left,
+.choice-button.active:hover .ticket-edge-right {
+  background: var(--color-gold-bright);
+}
+
+.choice-button.active:hover .ticket-body {
+  background: linear-gradient(135deg, #2b0407 0%, #1a0204 100%);
+  border-color: var(--color-gold-bright);
+}
+
+.choice-button.active:hover .choice-text {
+  color: var(--color-gold-bright);
+  text-shadow: 0 0 8px rgba(243, 229, 171, 0.4);
+}
+
+/* Locked tickets */
+.choice-button.locked {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.choice-button.locked .ticket-edge-left,
+.choice-button.locked .ticket-edge-right {
+  background: #555;
+}
+
+.choice-button.locked .ticket-body {
+  border-color: #555;
+  background: #141416;
+}
+
+.choice-button.locked .choice-text {
+  color: #777;
+}
+
+/* --- SIDEBAR PANEL & WIDGETS --- */
+
+/* Journey Tracker */
+.journey-tracker {
+  background: rgba(18, 18, 20, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: var(--shadow-velvet);
+  backdrop-filter: blur(8px);
+}
+
+.tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.tracker-icon {
+  font-size: 1.2rem;
+}
+
+.tracker-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.tracker-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0.4rem 0;
+}
+
+.tracker-value {
+  font-size: 2.2rem;
+  color: var(--color-gold-mid);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.tracker-divider {
+  font-size: 1.5rem;
+  color: rgba(212, 175, 55, 0.3);
+}
+
+.tracker-total {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.tracker-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-accent);
+  font-style: italic;
+}
+
+/* Prop Table Inventory Widget */
+.prop-table-container {
+  background: rgba(18, 18, 20, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-velvet), inset 0 0 15px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.prop-table-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--color-gold-mid);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.prop-table-slots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.prop-slot {
+  aspect-ratio: 1;
+  background: radial-gradient(circle at center, #1b0204 0%, #0c0102 100%);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  cursor: help;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.prop-slot.collected {
+  border-color: var(--color-gold-mid);
+  background: radial-gradient(circle at center, var(--color-theater-red-mid) 0%, #1f0204 100%);
+  box-shadow: var(--shadow-gold), inset 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.prop-slot.collected:hover {
+  transform: scale(1.08);
+  border-color: var(--color-gold-bright);
+}
+
+.prop-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.prop-name {
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.prop-slot.collected .prop-name {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+/* --- RESTART BUTTON (IN TOP HEADER) --- */
+.restart-trigger-header {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  background: rgba(18, 18, 20, 0.8);
+  border: 1px solid var(--color-gold-mid);
+  border-radius: 4px;
+  color: var(--color-gold-light);
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.restart-trigger-header:hover {
+  background: var(--color-theater-red-mid);
+  color: var(--color-gold-bright);
+  box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 0.8rem;
+  }
+
+  .theater-header::before, 
+  .theater-header::after {
+    display: none;
+  }
+
+  .app-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .app-subtitle {
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+  }
+
+  .story-scene-card {
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .scene-image-container {
+    height: 190px;
+  }
+
+  .placeholder-icon {
+    font-size: 2.2rem;
+  }
+
+  .placeholder-scene-title {
+    font-size: 1.1rem;
+  }
+
+  .ticket-body {
+    padding: 0.8rem 1.1rem;
+  }
+
+  .choice-text {
+    font-size: 0.95rem;
+  }
+
+  .personal-note-card {
+    padding: 1.2rem;
+  }
+
+  .restart-trigger-header {
+    position: static;
+    margin: 1rem auto 0 auto;
+    display: inline-block;
+  }
+}
+
+/* --- ENDING SCREEN PANELS & SPECIAL CARDS --- */
+.ending-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.curtain-call-header {
+  text-align: center;
+  position: relative;
+  background: linear-gradient(180deg, #5a060d, #2e0104);
+  padding: 2.5rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid var(--color-gold-mid);
+  box-shadow: var(--shadow-velvet), var(--shadow-red);
+}
+
+.ending-banner-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-gold-light);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(243, 229, 171, 0.4);
+}
+
+.curtain-ribbon {
+  height: 4px;
+  background: var(--color-gold-mid);
+  width: 50%;
+  margin: 1rem auto 0 auto;
+  position: relative;
+}
+
+.curtain-ribbon::before {
+  content: "✦";
+  color: var(--color-gold-mid);
+  position: absolute;
+  top: -9px;
+  left: calc(50% - 5px);
+  background: #2e0104;
+  padding: 0 5px;
+}
+
+.ending-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .ending-layout-grid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.ending-story-card {
+  background: var(--color-card-bg);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-velvet);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.ending-story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.ending-scene-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-gold-mid);
+}
+
+.ending-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- THE CELEBRATED PERSONAL NOTE FROM SCOTT --- */
+.personal-note-card {
+  background: linear-gradient(135deg, #fdfaf2 0%, #ebd9c0 100%);
+  border: 2px solid var(--color-gold-mid);
+  border-radius: 8px;
+  color: #2b1d0c;
+  padding: 2.2rem;
+  box-shadow: var(--shadow-velvet), 0 0 25px rgba(243, 229, 171, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-note-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(170, 130, 16, 0.25);
+  pointer-events: none;
+}
+
+.note-seal {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.note-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #79571c;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(121, 87, 28, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.note-body {
+  font-family: var(--font-accent);
+  font-size: 1.08rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.note-salutation {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.note-text {
+  text-indent: 1rem;
+  text-align: justify;
+}
+
+.note-signoff {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.note-signature {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #79571c;
+  margin-top: -0.2rem;
+}
+
+/* Playthrough Stats Box */
+.stats-card {
+  background: rgba(18, 18, 20, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.stats-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--color-gold-mid);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px dashed rgba(212,175,55,0.2);
+  padding-bottom: 0.4rem;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.stat-label {
+  color: var(--color-text-muted);
+}
+
+.stat-val {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+/* General Buttons */
+.restart-button-main {
+  background: linear-gradient(180deg, var(--color-gold-mid), var(--color-gold-dark));
+  border: 1px solid var(--color-gold-bright);
+  border-radius: 6px;
+  color: #1a0204;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: all 0.3s;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.restart-button-main:hover {
+  background: linear-gradient(180deg, var(--color-gold-bright), var(--color-gold-mid));
+  box-shadow: var(--shadow-gold), 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.restart-button-main:active {
+  transform: translateY(0);
+}
+
+/* --- STATE SCREENS (LOADING, ERROR) --- */
+.loading-screen, .error-screen {
+  background: var(--color-theater-red-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.loading-content, .error-content {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-gold-mid);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 480px;
+  box-shadow: var(--shadow-velvet);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(212, 175, 55, 0.2);
+  border-top-color: var(--color-gold-mid);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-gold-mid);
+}
+
+.error-icon {
+  font-size: 3rem;
+}
+
+.error-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-gold-light);
+}
+
+.error-message {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.retry-button {
+  background: var(--color-theater-red-bright);
+  border: 1px solid var(--color-gold-mid);
+  color: var(--color-gold-light);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.retry-button:hover {
+  background: #8b141d;
+  box-shadow: var(--shadow-gold);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes rotate-spotlight {
+  0% { transform: rotate(-12deg); }
+  100% { transform: rotate(12deg); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Custom horizontal layout adjustments for utility tags */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Ensures HTML5 video behaves like a beautiful letterboxed player */
+.scene-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps full video frame & controls visible */
+  background-color: #000; /* Sleek black letterbox padding */
+  display: block;
+  border-radius: inherit;
+}

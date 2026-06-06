@@ -1,0 +1,635 @@
+{
+  "startScene": "opening",
+  "scenes": {
+    "opening": {
+      "id": "opening",
+      "title": "The Humming Birthday Card",
+      "image": "/images/stage-door.jpg",
+      "text": "Wendy arrived at the Gielgud Theatre expecting an ordinary day: warm-up, notes, costume, places, curtain up.\n\nAdmittedly, it was also her birthday. But Wendy was not making a fuss about that.\n\nThis was a professional West End theatre. People had jobs to do. Cues to hit. Props to find. Children to stop from eating things they should not be eating.\n\nThen she saw the envelope on the stage door table. It was gold. It had her name on it. And it was humming.",
+      "choices": [
+        {
+          "text": "Open the card properly. She is a professional.",
+          "nextScene": "card_opened"
+        },
+        {
+          "text": "Shake it suspiciously.",
+          "nextScene": "card_shaken"
+        },
+        {
+          "text": "Ask the stage door keeper if birthday cards normally hum.",
+          "nextScene": "card_keeper"
+        },
+        {
+          "text": "Put it in her bag and pretend this is not happening.",
+          "nextScene": "card_ignored"
+        }
+      ]
+    },
+    "card_opened": {
+      "id": "card_opened",
+      "title": "A Theatrical Explosion",
+      "image": "/images/card-open.jpg",
+      "text": "The envelope splits open with a satisfying pop. A cascade of completely eco-friendly theatrical glitter explodes into the air. The card itself begins to hum in three-part harmony, singing a brassy rendition of 'Happy Birthday to Wendy!'\n\nInside, written in glowing gold ink, is a single sentence:\n\n'Tonight, Wendy, you must choose the ending. 52 doors await you in the Gielgud. Find the first three backstage.'",
+      "choices": [
+        {
+          "text": "Deep breath. Let's find these doors.",
+          "nextScene": "route_selection"
+        }
+      ]
+    },
+    "card_shaken": {
+      "id": "card_shaken",
+      "title": "Wendy, No.",
+      "image": "/images/card-shake.jpg",
+      "text": "You give the envelope a vigorous shake. It lets out a high-pitched feedback squeal that sounds remarkably like a wireless microphone passing too close to a monitor speaker. \n\nA crackling stage manager's voice seems to bounce inside your ear: 'Wendy. No.' \n\nYou decide you'd better open it before the entire theater is evacuated for a noise violation.",
+      "choices": [
+        {
+          "text": "Open the card properly.",
+          "nextScene": "card_opened"
+        }
+      ]
+    },
+    "card_keeper": {
+      "id": "card_keeper",
+      "title": "Emergency Birthday Protocol",
+      "image": "/images/stage-door.jpg",
+      "text": "You slide the gold card across the counter to the stage door keeper. He looks up from a crossword puzzle, adjusts his headset, and smiles warmly. \n\n'Normally, dear? Only on a 52nd birthday! The Stage Manager has already initiated Emergency Birthday Protocol. Go on, follow the gold lines that just appeared on the floorboards.'",
+      "choices": [
+        {
+          "text": "Follow the glowing gold lines.",
+          "nextScene": "card_opened"
+        }
+      ]
+    },
+    "card_ignored": {
+      "id": "card_ignored",
+      "title": "The Singing Bag",
+      "image": "/images/card-bag.jpg",
+      "text": "You shove the card deep into your rehearsal bag. The bag immediately begins to vibrate with alarming intensity, thumping out a flawless tap-dance rhythm to 'Food, Glorious Food.' \n\nThe vibration starts rattling a nearby rack of metal props. You hastily yank it back out before it causes a set collapse.",
+      "choices": [
+        {
+          "text": "Alright, alright, open the card!",
+          "nextScene": "card_opened"
+        }
+      ]
+    },
+    "route_selection": {
+      "id": "route_selection",
+      "title": "The Backstage Crossroads",
+      "image": "/images/backstage-crossroads.jpg",
+      "text": "You stand in the wings. The familiar backstage shadows of the Gielgud Theatre look different tonight. The floorboards pulse with soft, warm footlights. A glowing golden thread on the floor splits in three directions. \n\nEach thread leads to a door you have never noticed before in all your hours here.",
+      "choices": [
+        {
+          "text": "Enter the velvet-curtained Wardrobe Door.",
+          "nextScene": "wardrobe_intro"
+        },
+        {
+          "text": "Step through the heavy brass-rimmed Stage Door.",
+          "nextScene": "stagedoor_intro"
+        },
+        {
+          "text": "Pry open the iron-grated Trapdoor in the stage floor.",
+          "nextScene": "trapdoor_intro"
+        }
+      ]
+    },
+    "wardrobe_intro": {
+      "id": "wardrobe_intro",
+      "title": "The Whispering Wardrobe",
+      "image": "/images/wardrobe-room.jpg",
+      "text": "You step into the Wardrobe Room, but the racks are alive! Rows of Victorian frock coats and Oliver! breeches are gently swaying and whispering backstage gossip. \n\nOn a vanity mirror sits a flamboyant talking velvet top hat giving highly opinionated styling critiques. In the center sits a massive, iron-bound costume trunk covered in glowing runes.",
+      "choices": [
+        {
+          "text": "Confront the opinionated talking hat.",
+          "nextScene": "wardrobe_hat"
+        },
+        {
+          "text": "Open the mysterious iron-bound costume trunk.",
+          "nextScene": "wardrobe_trunk"
+        }
+      ]
+    },
+    "wardrobe_hat": {
+      "id": "wardrobe_hat",
+      "title": "Advice from a Hat",
+      "image": "/images/talking-hat.jpg",
+      "text": "You stand before the velvet top hat. It turns to you, adjusting its brim, and gasps: \n\n'Darling! That rehearsal outfit is far too Act One breadline. You are a West End star! On your 52nd, you need theatrical authority. Take this script—it has notes written in pure gold ink by a legendary director. Perform it well!'",
+      "choices": [
+        {
+          "text": "Rehearse the legendary script out loud to satisfy the hat's high standards.",
+          "nextScene": "wardrobe_rehearsal"
+        },
+        {
+          "text": "Politely decline the script and try on a giant, animated peacock-feather hat instead.",
+          "nextScene": "wardrobe_feather_hat"
+        }
+      ]
+    },
+    "wardrobe_rehearsal": {
+      "id": "wardrobe_rehearsal",
+      "title": "Monologue in the Mirror",
+      "image": "/images/talking-hat.jpg",
+      "text": "You clear your throat, strike a pose, and deliver a dramatic Shakespearean monologue. The top hat gasps, and a nearby rack of Victorian frock coats erupts in silent, swaying applause!\n\n'Superb, darling!' the hat beams. 'You have earned this.' A shimmering, marked-up script floats down into your hands.",
+      "choices": [
+        {
+          "text": "Pocket the director's script and seek an exit.",
+          "nextScene": "wardrobe_exit",
+          "addItem": "marked-up script"
+        }
+      ]
+    },
+    "wardrobe_feather_hat": {
+      "id": "wardrobe_feather_hat",
+      "title": "The Whispering Plumage",
+      "image": "/images/talking-hat.jpg",
+      "text": "You pop the grand peacock-feather hat on. Instantly, the feathers ruffle and start whispering juicy West End dressing room gossip in your ear, including a tip about a hidden drawer.\n\n'They thought we wouldn't notice Act Two's prop key!' the feathers giggle.",
+      "choices": [
+        {
+          "text": "Wear the gossip-whispering hat proudly and find the exit.",
+          "nextScene": "wardrobe_exit",
+          "addItem": "feathered hat"
+        }
+      ]
+    },
+    "wardrobe_trunk": {
+      "id": "wardrobe_trunk",
+      "title": "The Costume Trunk",
+      "image": "/images/costume-trunk.jpg",
+      "text": "You heave open the heavy, creaking costume trunk. Inside, lying on a bed of glowing red velvet, is a single, sparkling silver tap shoe. \n\nAs soon as your fingers touch it, the shoe begins to tap a rapid, upbeat syncopated rhythm against the wood all by itself.",
+      "choices": [
+        {
+          "text": "Slip on the sparkling silver tap shoe and do an impromptu dance.",
+          "nextScene": "wardrobe_dance"
+        },
+        {
+          "text": "Ignore the shoe and dig deeper underneath a heavy Victorian velvet cape.",
+          "nextScene": "wardrobe_trunk_rummage"
+        }
+      ]
+    },
+    "wardrobe_dance": {
+      "id": "wardrobe_dance",
+      "title": "A Dazzling Time-Step",
+      "image": "/images/costume-trunk.jpg",
+      "text": "You lace up the silver shoe and do a perfect time-step. The magical tap beats ripple across the room, causing all the wardrobe cabinets to open and close in syncopated rhythm!\n\nIt is the most spectacular solo warm-up you've ever performed.",
+      "choices": [
+        {
+          "text": "Grab the magical tap shoe and continue deeper.",
+          "nextScene": "wardrobe_exit",
+          "addItem": "silver tap shoe"
+        }
+      ]
+    },
+    "wardrobe_trunk_rummage": {
+      "id": "wardrobe_trunk_rummage",
+      "title": "Rummaging Deeper",
+      "image": "/images/costume-trunk.jpg",
+      "text": "You brush past the tap shoe and dig under the heavy velvet cape. Hidden at the bottom is an old, ornate makeup kit. \n\nInside is a set of golden eyeliner and theatrical face paints that pulse with soft, warm light.",
+      "choices": [
+        {
+          "text": "Pocket the gold makeup kit and continue deeper.",
+          "nextScene": "wardrobe_exit",
+          "addItem": "gold makeup kit"
+        }
+      ]
+    },
+    "wardrobe_exit": {
+      "id": "wardrobe_exit",
+      "title": "The Dressing Room Mirror",
+      "image": "/images/dressing-room-mirror.jpg",
+      "text": "You walk deeper into the wardrobe room. You pass a grand dressing room mirror illuminated by bright vanity bulbs. In the reflection, you see yourself, but surrounded by a soft golden spotlight.\n\nIn the corner, a voice that sounds like the wardrobe mistress whispers: 'It'll be fine by beginners, Wendy!' A secret wardrobe partition slides open.",
+      "choices": [
+        {
+          "text": "Investigate the illuminated vanity drawer before leaving.",
+          "nextScene": "wardrobe_secret_drawer"
+        },
+        {
+          "text": "Hurry straight through the partition into the backstage corridor.",
+          "nextScene": "emergency_protocol"
+        }
+      ]
+    },
+    "wardrobe_secret_drawer": {
+      "id": "wardrobe_secret_drawer",
+      "title": "The Hidden Vanity Key",
+      "image": "/images/dressing-room-mirror.jpg",
+      "text": "You slide open the vanity drawer. Resting inside, surrounded by theater tickets, is a heavy brass key wrapped in black gaffer tape.\n\nIt feels warm to the touch, pulsing with the energy of a hundred successful opening nights.",
+      "choices": [
+        {
+          "text": "Pocket the heavy brass key and step backstage.",
+          "nextScene": "emergency_protocol",
+          "addItem": "theatre key"
+        }
+      ]
+    },
+    "stagedoor_intro": {
+      "id": "stagedoor_intro",
+      "title": "Shaftesbury Avenue 1850",
+      "image": "/images/dickensian-west-end.jpg",
+      "text": "You step through the stage door, but instead of Shaftesbury Avenue in 2026, you walk into a foggy, atmospheric Dickensian London! \n\nGas lamps cast long shadows through the mist, and Victorian theatre posters line the brick walls. Amidst the cobblestones, there is a single, suspiciously modern, glowing Pret A Manger.",
+      "choices": [
+        {
+          "text": "Investigate a glowing, oversized theatre poster on the brick wall.",
+          "nextScene": "stagedoor_poster"
+        },
+        {
+          "text": "Follow a distant, beautiful chorus of singing down a foggy side-alley.",
+          "nextScene": "stagedoor_foggy"
+        }
+      ]
+    },
+    "stagedoor_poster": {
+      "id": "stagedoor_poster",
+      "title": "The Golden Playbill",
+      "image": "/images/theatre-poster.jpg",
+      "text": "The glowing poster is advertising a show called 'Wendy and the 52 Doors of the Gielgud.' \n\nUnderneath it is a street seller standing beside a cart of steaming pastries, and a glistening gold theatre ticket is glued to the brickwork.",
+      "choices": [
+        {
+          "text": "Use your pocket coins to buy a warm mincemeat pie from the street seller.",
+          "nextScene": "stagedoor_vendor"
+        },
+        {
+          "text": "Peel the glistening gold ticket directly off the brick wall.",
+          "nextScene": "stagedoor_poster_unlocked"
+        }
+      ]
+    },
+    "stagedoor_vendor": {
+      "id": "stagedoor_vendor",
+      "title": "The Victorian Street Vendor",
+      "image": "/images/theatre-poster.jpg",
+      "text": "You slide your modern coins to the vendor. He examines them, winks, and hands you a hot, delicious-smelling Victorian mincemeat pie.\n\n'Happy 52nd, Wendy!' he chuckles. 'Careful, the crust is magical.'",
+      "choices": [
+        {
+          "text": "Carry the delicious pie and head toward the theater wings.",
+          "nextScene": "stagedoor_exit",
+          "addItem": "Victorian meat pie"
+        }
+      ]
+    },
+    "stagedoor_poster_unlocked": {
+      "id": "stagedoor_poster_unlocked",
+      "title": "Golden Ticket Unlocked",
+      "image": "/images/theatre-poster.jpg",
+      "text": "You peel the shimmering gold ticket off the wall. When you touch it, a rush of warm air fills you, along with the sound of a roaring standing ovation.",
+      "choices": [
+        {
+          "text": "Pocket the magical golden ticket and head toward the theater wings.",
+          "nextScene": "stagedoor_exit",
+          "addItem": "gold theatre ticket"
+        }
+      ]
+    },
+    "stagedoor_foggy": {
+      "id": "stagedoor_foggy",
+      "title": "The Foggy Alley",
+      "image": "/images/foggy-alley.jpg",
+      "text": "You creep down the foggy alley, following the beautiful harmony. You run into a child actor dressed as the Artful Dodger. \n\nHe looks up at you with large, solemn eyes and asks an alarmingly serious question: 'Wendy, if all the world's a stage, who is running the dimmer board, and do they get paid overtime?'",
+      "choices": [
+        {
+          "text": "Answer his existential question with a witty, theatrical monologue.",
+          "nextScene": "stagedoor_alley_dodger_pleased"
+        },
+        {
+          "text": "Offer him a handful of modern lemon drop candies from your coat pocket.",
+          "nextScene": "stagedoor_alley_candy"
+        }
+      ]
+    },
+    "stagedoor_alley_dodger_pleased": {
+      "id": "stagedoor_alley_dodger_pleased",
+      "title": "A Pleased Dodger",
+      "image": "/images/foggy-alley.jpg",
+      "text": "The child actor is deeply impressed by your theatrical brilliance. He bows grandly and hands you an everlasting birthday candle.\n\n'Splendid answer, Wendy! Here, take this candle. It lights the way back to modern times!'",
+      "choices": [
+        {
+          "text": "Take the candle and follow his secret shortcut.",
+          "nextScene": "stagedoor_exit",
+          "addItem": "birthday candle"
+        }
+      ]
+    },
+    "stagedoor_alley_candy": {
+      "id": "stagedoor_alley_candy",
+      "title": "Alchemical Candy Trade",
+      "image": "/images/foggy-alley.jpg",
+      "text": "The child actor takes the lemon drops and pops one in his mouth. His eyes grow wide.\n\n'Cor! This is the highest alchemical marvel in London!' he gasps, happily handing over the everlasting birthday candle in exchange.",
+      "choices": [
+        {
+          "text": "Take the candle and wave goodbye to the happy child actor.",
+          "nextScene": "stagedoor_exit",
+          "addItem": "birthday candle"
+        }
+      ]
+    },
+    "stagedoor_exit": {
+      "id": "stagedoor_exit",
+      "title": "Return to the Wings",
+      "image": "/images/backstage-corridor.jpg",
+      "text": "The Dickensian fog begins to swirl, and the modern lights of Shaftesbury Avenue peek through. \n\nIn the distance, a megaphone crackles with the stage manager's voice: 'Emergency Birthday Protocol, stage two! All players return to places!' A secret door in the brick wall pops open.",
+      "choices": [
+        {
+          "text": "Quickly pop inside the curiously modern, glowing Victorian Pret A Manger.",
+          "nextScene": "stagedoor_pret"
+        },
+        {
+          "text": "Step back through the brick-wall portal immediately.",
+          "nextScene": "emergency_protocol"
+        }
+      ]
+    },
+    "stagedoor_pret": {
+      "id": "stagedoor_pret",
+      "title": "The Dickensian Coffee Shop",
+      "image": "/images/backstage-corridor.jpg",
+      "text": "You pop inside. A Dickensian barista wearing a flat cap is operating a steaming, coal-powered espresso machine.\n\nHe serves you a steaming, rich flat white with a gold foam leaf on top. It gives you an incredible surge of West End energy!",
+      "choices": [
+        {
+          "text": "Sip your flat white and step back through the brick portal.",
+          "nextScene": "emergency_protocol",
+          "addItem": "steaming espresso"
+        }
+      ]
+    },
+    "trapdoor_intro": {
+      "id": "trapdoor_intro",
+      "title": "Beneath the Gielgud",
+      "image": "/images/trapdoor.jpg",
+      "text": "You climb down the iron ladder under the trapdoor and find yourself in a vast, subterranean labyrinth beneath the Gielgud Theatre. \n\nIt is filled with shelves of ancient props, forgotten set pieces from the 1970s, and flickering cue lights.",
+      "choices": [
+        {
+          "text": "Follow a pulsing green emergency cue light down a dark hallway.",
+          "nextScene": "trapdoor_cuelight"
+        },
+        {
+          "text": "Investigate a low whispering coming from a hidden prompt corner.",
+          "nextScene": "trapdoor_meeting"
+        }
+      ]
+    },
+    "trapdoor_cuelight": {
+      "id": "trapdoor_cuelight",
+      "title": "The Cue Light Corner",
+      "image": "/images/cue-light.jpg",
+      "text": "You follow the pulsing green cue light to a dusty dressing room corner. Sitting there is the friendly resident ghost of the Gielgud, wearing a powdered wig. \n\nThe ghost only communicates in musical theatre quotes, whispering: 'There's no business like show business! The show must go on!' He bows grandly.",
+      "choices": [
+        {
+          "text": "Perform an impromptu, dramatic musical duet with the ghost.",
+          "nextScene": "trapdoor_ghost_duet"
+        },
+        {
+          "text": "Use a strip of black gaffer tape from your bag to repair a rip in his frock coat.",
+          "nextScene": "trapdoor_ghost_repaired"
+        }
+      ]
+    },
+    "trapdoor_ghost_duet": {
+      "id": "trapdoor_ghost_duet",
+      "title": "The Ghostly Duet",
+      "image": "/images/cue-light.jpg",
+      "text": "You strike a dramatic pose and sing a grand soprano line from Oliver! The ghost matches your harmony perfectly, his high notes echoing through the subterranean pipes.\n\nThrilled, he bows and presents you with a heavy, ornate brass theatre key.",
+      "choices": [
+        {
+          "text": "Thank the ghost and find your way back up.",
+          "nextScene": "trapdoor_exit",
+          "addItem": "theatre key"
+        }
+      ]
+    },
+    "trapdoor_ghost_repaired": {
+      "id": "trapdoor_ghost_repaired",
+      "title": "Spectral Tailoring",
+      "image": "/images/cue-light.jpg",
+      "text": "You pull a roll of black gaffer tape from your bag and patch up a large rip in the ghost's 18th-century frock coat.\n\nHe gasps with delight, smooths down his coat, and says: 'Wicked! Take this key, Wendy!' He hands you the brass key.",
+      "choices": [
+        {
+          "text": "Wave goodbye to your new ghostly friend and find your way back up.",
+          "nextScene": "trapdoor_exit",
+          "addItem": "theatre key"
+        }
+      ]
+    },
+    "trapdoor_meeting": {
+      "id": "trapdoor_meeting",
+      "title": "The Understudy Society",
+      "image": "/images/understudy-meeting.jpg",
+      "text": "You slip into the prompt corner and find a secret emergency meeting of the Gielgud understudies. They are sitting around a table covered in rolls of black gaffer tape. \n\n'Thank goodness you're here, Wendy!' one whispers. 'We've prepared for this. Take the emergency prop spoon!'",
+      "choices": [
+        {
+          "text": "Take the prop spoon and lead the understudies in a dramatic theatrical uprising.",
+          "nextScene": "trapdoor_understudy_rebellion"
+        },
+        {
+          "text": "Take the prop spoon and politely ask them where the real birthday cake is hidden.",
+          "nextScene": "trapdoor_cake_hunt"
+        }
+      ]
+    },
+    "trapdoor_understudy_rebellion": {
+      "id": "trapdoor_understudy_rebellion",
+      "title": "The Rebel Monologues",
+      "image": "/images/understudy-meeting.jpg",
+      "text": "You raise the spoon like a scepter and lead the understudies in a spirited backstage march. They cheer, hand you a shiny golden understudy crest, and declare you their Rebel Director!\n\n'We march on places at beginners!' they shout.",
+      "choices": [
+        {
+          "text": "Wear the understudy rebel crest and find the exit.",
+          "nextScene": "trapdoor_exit",
+          "addItem": "rebel crest"
+        }
+      ]
+    },
+    "trapdoor_cake_hunt": {
+      "id": "trapdoor_cake_hunt",
+      "title": "The miniature Cake Set",
+      "image": "/images/understudy-meeting.jpg",
+      "text": "They giggle and pull open a hidden prop drawer. Nestled inside is a tiny, perfectly constructed scale model of the Gielgud Theatre stage made entirely of red velvet cake frosting.\n\nIt is incredibly detailed and delicious.",
+      "choices": [
+        {
+          "text": "Secure the prop spoon and find your way back up.",
+          "nextScene": "trapdoor_exit",
+          "addItem": "prop spoon"
+        }
+      ]
+    },
+    "trapdoor_exit": {
+      "id": "trapdoor_exit",
+      "title": "A Stressed Encounter",
+      "image": "/images/prop-table.jpg",
+      "text": "You climb the stairs out of the trapdoor. The stage manager is standing at the top, holding a clipboard and looking extremely stressed beside a collapsing set shelf.",
+      "choices": [
+        {
+          "text": "Use your black gaffer tape to repair the collapsing shelf before he notices.",
+          "nextScene": "trapdoor_gaffer_success"
+        },
+        {
+          "text": "Slip quietly past him into the main corridor while he's reviewing his clipboard.",
+          "nextScene": "emergency_protocol"
+        }
+      ]
+    },
+    "trapdoor_gaffer_success": {
+      "id": "trapdoor_gaffer_success",
+      "title": "Gaffer Tape Salvage",
+      "image": "/images/prop-table.jpg",
+      "text": "With professional speed, you secure the shelf with a double wrap of black gaffer tape. The stage manager looks up, sighs with absolute relief, and gives you a silent nod of total West End respect.\n\n'Absolute legend, Wendy. Go ahead to the protocol meeting!'",
+      "choices": [
+        {
+          "text": "Receive his nod of respect and head backstage.",
+          "nextScene": "emergency_protocol",
+          "addItem": "prop spoon"
+        }
+      ]
+    },
+    "emergency_protocol": {
+      "id": "emergency_protocol",
+      "title": "Emergency Birthday Protocol",
+      "image": "/images/backstage-corridor.jpg",
+      "text": "You rush into the main backstage corridor. The entire cast, crew, and technical team are running around in a state of high-stakes theatrical urgency. \n\nThe Stage Manager grabs you by the shoulders: 'Wendy! Emergency Birthday Protocol is fully engaged. The set is 98% secured. We've got 52 doors in this theater and we've located the final one!'",
+      "choices": [
+        {
+          "text": "Use some black gaffer tape to help secure a shaking backstage spotlight.",
+          "nextScene": "emergency_protocol_secured"
+        },
+        {
+          "text": "Answer the serious child actor's question: 'Is a 52nd birthday the end of Act One?'",
+          "nextScene": "emergency_protocol_talk"
+        }
+      ]
+    },
+    "emergency_protocol_secured": {
+      "id": "emergency_protocol_secured",
+      "title": "Spotlight Secured",
+      "image": "/images/backstage-corridor.jpg",
+      "text": "You double-tape the spotlight bracket. It stops shaking and beams a glorious, golden circle directly onto the floor, leading straight to the final door.\n\n'Nice work, Wendy! Places for beginners!' the crew yells.",
+      "choices": [
+        {
+          "text": "Run toward the final shining door!",
+          "nextScene": "the_52nd_door"
+        }
+      ]
+    },
+    "emergency_protocol_talk": {
+      "id": "emergency_protocol_talk",
+      "title": "Existential Backstage Talk",
+      "image": "/images/backstage-corridor.jpg",
+      "text": "You smile and tell the child actor: 'No, dear. It means you've finished the Overture, and now it's time for the big, show-stopping Act One solo!'\n\nThe child's eyes light up, and they point excitedly toward a glowing hallway.\n\n'Break a leg, Wendy! The final door is right there!'",
+      "choices": [
+        {
+          "text": "Pat the child actor's head and run toward the final door!",
+          "nextScene": "the_52nd_door"
+        }
+      ]
+    },
+    "the_52nd_door": {
+      "id": "the_52nd_door",
+      "title": "The 52nd Door",
+      "image": "/images/final-door.jpg",
+      "text": "You stand in front of the final, magnificent wooden door backstage. It is covered in intricate gold filigree, glowing with warm stage lights, and has the number '52' beautifully carved in the center. \n\nA chorus of unseen singers hums an elegant overture. How will you open it?",
+      "choices": [
+        {
+          "text": "🔑 Unlock the door with the heavy brass theatre key.",
+          "nextScene": "ending_birthday",
+          "requiredItem": "theatre key"
+        },
+        {
+          "text": "📜 Present the marked-up script and deliver a perfect West End high note.",
+          "nextScene": "ending_musical",
+          "requiredItem": "marked-up script"
+        },
+        {
+          "text": "🎟️ Insert the gold theatre ticket into the glowing door slot.",
+          "nextScene": "ending_ghost",
+          "requiredItem": "gold theatre ticket"
+        },
+        {
+          "text": "🕯️ Light the door's carvings with the everlasting birthday candle.",
+          "nextScene": "ending_ghost",
+          "requiredItem": "birthday candle"
+        },
+        {
+          "text": "🥄 Brandish the prop spoon and declare, 'More cake, please!'",
+          "nextScene": "ending_cake",
+          "requiredItem": "prop spoon"
+        },
+        {
+          "text": "🥿 Tap-dance a dazzling rhythm with the silver shoe.",
+          "nextScene": "ending_cake",
+          "requiredItem": "silver tap shoe"
+        },
+        {
+          "text": "👑 Wear the gossip-whispering feathered hat and make a grand entrance.",
+          "nextScene": "ending_musical",
+          "requiredItem": "feathered hat"
+        },
+        {
+          "text": "💄 Apply the golden makeup kit and push the door open.",
+          "nextScene": "ending_birthday",
+          "requiredItem": "gold makeup kit"
+        },
+        {
+          "text": "🥧 Feed the door's keyhole a warm slice of Victorian meat pie.",
+          "nextScene": "ending_cake",
+          "requiredItem": "Victorian meat pie"
+        },
+        {
+          "text": "🛡️ Rally the understudy rebellion and breach the door using the Rebel Crest.",
+          "nextScene": "ending_ghost",
+          "requiredItem": "rebel crest"
+        },
+        {
+          "text": "☕ Take a refreshing sip of hot espresso and knock firmly.",
+          "nextScene": "ending_birthday",
+          "requiredItem": "steaming espresso"
+        },
+        {
+          "text": "🎤 Deliver a perfect West End high note with sheer confidence.",
+          "nextScene": "ending_musical"
+        },
+        {
+          "text": "🚪 Knock firmly and say, 'It'll be fine by beginners!'",
+          "nextScene": "ending_birthday"
+        }
+      ]
+    },
+    "ending_birthday": {
+      "id": "ending_birthday",
+      "title": "The Birthday Bow",
+      "image": "/images/birthday-ending.jpg",
+      "video": "/videos/birthday-ending.mp4",
+      "text": "The 52nd door swings open! You are bathed in a stunning, warm gold spotlight. \n\nThe entire cast of Oliver!, the stage crew, and the theatre ghosts are assembled on stage, holding a magnificent three-tier birthday cake. A banner reads: 'Happy 52nd Birthday Wendy!' \n\nThe stage manager steps forward, smiles, and says: 'For once, Wendy... Yes.' You take your birthday bow to thundering, tearful applause!",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "best"
+    },
+    "ending_musical": {
+      "id": "ending_musical",
+      "title": "The Wendy! Musical",
+      "image": "/images/musical-ending.jpg",
+      "video": "/videos/musical-ending.mp4",
+      "text": "You burst through the door, striking a dramatic pose and holding a high note that shatters a nearby stage manager's coffee mug! \n\nThe door's magic instantly ripples through the theater, transforming Oliver! into a brand-new, spectacular musical: Wendy! \n\nThe set shifts, the child actors begin singing a brilliant opening chorus about your West End fame, and the critics are already writing five-star reviews about the most daring, post-modern musical event of the decade!",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "musical"
+    },
+    "ending_ghost": {
+      "id": "ending_ghost",
+      "title": "The Ghost's Standing Ovation",
+      "image": "/images/ghost-ending.jpg",
+      "video": "/videos/ghost-ending.mp4",
+      "text": "The door opens to reveal the grand, historic auditorium of the Gielgud Theatre, but all the seats are filled with friendly, glowing ghosts of actors past. \n\nThey declare your 52nd birthday a theatrical holiday. They drape a luxurious velvet cloak over your shoulders, illuminate the stage in unnecessarily dramatic, dazzling pink-and-gold lighting, and sing a sweeping, operatic birthday chorus. It is magical, grand, and perfectly theatrical!",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "ghost"
+    },
+    "ending_cake": {
+      "id": "ending_cake",
+      "title": "The Great Cake Incident",
+      "image": "/images/cake-ending.jpg",
+      "video": "/videos/cake-ending.mp4",
+      "text": "You open the door and find the missing birthday cake... except it has somehow been built directly into the Act Two set of Oliver! as a massive Victorian monument. \n\nThe stage manager whispers from the wings: 'It'll be fine by beginners! Just perform around it!' \n\nYou do just that, tap-dancing on the icing. The audience erupts in a standing ovation, convinced it is a bold, avant-garde stroke of directorial genius!",
+      "choices": [],
+      "isEnding": true,
+      "endingType": "cake"
+    }
+  }
+}
