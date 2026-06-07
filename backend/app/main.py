@@ -7,8 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from .story import Story, Scene
-
+try:
+    from .story import Story, Scene
+except ImportError:
+    from story import Story, Scene
+    
 app = FastAPI(title="Wendy and the 52 Doors of the Gielgud - API")
 
 # Enable CORS for React development server
